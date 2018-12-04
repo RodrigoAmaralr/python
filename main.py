@@ -1,8 +1,14 @@
 import fibo
 
+import ReadSignals
+
 def main():
-	fibo.fib(1000)
-	print('asdf')
+    ECG, PPG, ABP = ReadSignals.Read('3000063_0010')
+    print(ECG)
+    print(PPG)
+    print(ABP)
+	#signals, fields = wfdb.rdsamp('3000063_0010')
+	#wfdb.plot_all_records(directory='matlab')
 	
 
 if __name__ == "__main__":
