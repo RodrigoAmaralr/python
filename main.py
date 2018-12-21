@@ -1,11 +1,33 @@
-import ReadSignals
 import wfdb
+import matplotlib.pyplot as plt
+import numpy as np
+
+import ReadSignals
 
 
 def PAT_Features(PathSignal):
-    signals, fields = wfdb.rdsamp(PathSignal, channel_names='PLETH' )
-    print()
-
+    N = 0
+    signals, fields = wfdb.rdsamp(PathSignal)
+    #print(np.shape(signals))	                    # Tamanho do sinal
+    print(fields)
+    fs = fields['fs']
+    sig_len = fields['sig_len']
+    seconds = sig_len/fs
+    t = np.arange(0., seconds, seconds/sig_len)
+    names = fields['sig_name']                      # Pega o nome das variáveis
+    
+    #Procura por um nome especifico
+    for i, name in enumerate(names):
+        if name == 'II':
+            N = i
+    signal = signals[:,N]
+    
+    plt.title(names[N])                             # Define o nome do titulo
+    plt.xlabel('segundos')
+    plt.ylabel('mv')
+    plt.plot(t, signal)
+    plt.show()
+    
 def main():
     PAT_Features('3000063_0010')
     #ECG, PPG, ABP, FS = ReadSignals.Read('3000063_0010')
