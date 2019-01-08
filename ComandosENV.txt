@@ -1,0 +1,15 @@
+instalar Virtualenv
+	pip install virtualenv
+
+Crie ambiente virtual
+	virtualenv env  						ou 		C:\Projeto\python>virtualenv env
+Iniciar Virtalenv
+	c:\$projeto$\env\Scripts\activate		ou 		C:\teste>C:\teste\env\Scripts\activate
+Sair do Virtalenv
+	deactivate
+
+
+Criar requirements
+	pip freeze > requirements.txt
+Instalar requirements
+	pip install -r requirements.txt
