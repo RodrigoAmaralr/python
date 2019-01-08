@@ -4,20 +4,6 @@ import numpy as np
 
 import ReadSignals
 
-#from __future__ import division
-from sympy import *
-
-#https://professor.ufrgs.br/pedro/files/3-derivada.html
-def Derivada():
-    init_printing()
-    x, y = symbols('x y') #define x e y como variáveis simbólicas.
-    print(x)
-    print(y)
-    print(diff(f(x),x).subs(x,10))
-    
-def f(x): 
-    return (x**3 - 3*x + 2)*exp(-x/4) - 1
-
 
 def PAT_Features(PathSignal):
     N = 0
@@ -39,8 +25,7 @@ def PAT_Features(PathSignal):
     signal = signals[:,N]
     fs = fields['fs']
     
-    Derivada()
-    
+ 
    
     plt.title(names[N])                             # Define o nome do titulo
     plt.xlabel('segundos')

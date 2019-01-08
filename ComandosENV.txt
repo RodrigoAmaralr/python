@@ -4,7 +4,7 @@ instalar Virtualenv
 Crie ambiente virtual
 	virtualenv env  						ou 		C:\Projeto\python>virtualenv env
 Iniciar Virtalenv
-	c:\$projeto$\env\Scripts\activate		ou 		C:\teste>C:\teste\env\Scripts\activate
+	c:\$projeto$\env\Scripts\activate		ou 		C:\Projeto\python\env\Scripts\activate
 Sair do Virtalenv
 	deactivate
 

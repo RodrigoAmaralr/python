@@ -1,15 +1,8 @@
-instalar Virtualenv
-	pip install virtualenv
+Adicionar arquivos
+	git add *
 
-Crie ambiente virtual
-	virtualenv env  						ou 		C:\Projeto\python>virtualenv env
-Iniciar Virtalenv
-	c:\$projeto$\env\Scripts\activate		ou 		C:\teste>C:\teste\env\Scripts\activate
-Sair do Virtalenv
-	deactivate
-
-
-Criar requirements
-	pip freeze > requirements.txt
-Instalar requirements
-	pip install -r requirements.txt
+commit 
+	git commit -m "comentários das alterações"
+	
+enviando alterações
+	git push origin master
