@@ -2,7 +2,7 @@ Adicionar arquivos
 	git add *
 
 commit 
-	git commit -m "comentários das alterações"
+	git commit -m "comentários"
 	
 enviando alterações
 	git push origin master
