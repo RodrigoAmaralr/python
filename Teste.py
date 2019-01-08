@@ -6,6 +6,7 @@ import ReadSignals
 
 #from __future__ import division
 from sympy import *
+from scipy import signal, misc
 
 #https://professor.ufrgs.br/pedro/files/3-derivada.html
 def Derivada():
@@ -38,19 +39,28 @@ def PAT_Features(PathSignal):
     #Salva os dados
     signal = signals[:,N]
     fs = fields['fs']
+    ecg = signal
     
-    Derivada()
+    time = np.arange(ecg.size) / fs
+    plt.plot(time, ecg)
+    plt.xlabel("time in s")
+    plt.ylabel("ECG in mV")
+    plt.xlim(0, 1000)
+    plt.ylim(-1, 1.5)
+    plt.show()
+    #Derivada()
     
    
-    plt.title(names[N])                             # Define o nome do titulo
-    plt.xlabel('segundos')
-    plt.ylabel('mv')
-    plt.plot(t, signal)
-    plt.show()
+    #plt.title(names[N])                             # Define o nome do titulo
+    #plt.xlabel('segundos')
+    #plt.ylabel('mv')
+    #plt.plot(t, signal)
+    #plt.show()
 
     
     
 def main():
+
     PAT_Features('3000063_0010')
     #ECG, PPG, ABP, FS = ReadSignals.Read('3000063_0010')
     #print(ECG)
